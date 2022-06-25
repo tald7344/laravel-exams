@@ -35,6 +35,7 @@ return [
     'not-correct' => 'غير صحيح',
     'new_answer' => 'جواب جديد',
     'answer' => 'الجواب',
+    'answers' => 'الإجابات',
     'answer_status' => 'الحالة',
     'home' => 'الصفحة الرئيسية',
     'logout' => 'تسجيل خروج',

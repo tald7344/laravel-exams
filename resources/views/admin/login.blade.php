@@ -67,9 +67,6 @@
       <p class="mb-1">
         <a href="{{aurl('forgot/password')}}">I forgot my password</a>
       </p>
-       <p class="mb-0">
-        <a href="{{aurl('redirect/facebook')}}" class="text-center">Register With Facebook</a>
-      </p>
     </div>
     <!-- /.login-card-body -->
   </div>

@@ -1478,6 +1478,10 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button {
     min-height: calc(100vh - 39px);
 }
 
+.result h1 {
+    margin-bottom: 3rem;
+}
+
 .result .question {
     margin-bottom: 25px;
 }
