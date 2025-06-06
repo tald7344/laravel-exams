@@ -27,6 +27,12 @@ class ExamDatatable extends DataTable
             ->addColumn('edit', 'admin.exams.actions.edit')
             ->addColumn('delete', 'admin.exams.actions.delete')
             ->addColumn('view', 'admin.exams.actions.view')
+            ->editColumn('created_at', function ($admin) {
+                return \Carbon\Carbon::parse($admin->created_at)->format('d M Y, h:i A'); // Format the date as needed
+            })
+            ->editColumn('updated_at', function ($admin) {
+                return \Carbon\Carbon::parse($admin->updated_at)->format('d M Y, h:i A'); // Format the date as needed
+            })
             ->rawColumns([
                 'checkbox', 'edit', 'delete', 'view'
             ]);
@@ -89,18 +95,18 @@ class ExamDatatable extends DataTable
             'buttons' => [
                 [
                     'text' => '<i class="fa fa-plus mr-1"></i> ' . trans('admin.new_exam'),
-                    'className' => 'btn btn-info text-white',
+                    'className' => 'btn btn-info text-white btn-sm',
                     'action' => 'function () {
                         window.location.href = "' . URL::current() . '/create";
                     }'
                 ],
-                ['extend' => 'print', 'className' => 'btn btn-primary text-white', 'text' => '<i class="fa fa-print"></i>'],
-                ['extend' => 'csv', 'className' => 'btn btn-info text-white', 'text' => '<i class="fa fa-file mr-2"></i> ' . trans('admin.export_csv')],
-                ['extend' => 'excel', 'className' => 'btn btn-success text-white', 'text' => '<i class="fa fa-file mr-2"></i> ' . trans('admin.export_excel')],
-                ['extend' => 'reload', 'className' => 'btn btn-outline-secondary', 'text' => '<i class="fa fa-sync"></i>'],
+                ['extend' => 'print', 'className' => 'btn btn-primary text-white btn-sm mx-1', 'text' => '<i class="fa fa-print"></i>'],
+                ['extend' => 'csv', 'className' => 'btn btn-info text-white btn-sm', 'text' => '<i class="fa fa-file mr-2"></i> ' . trans('admin.export_csv')],
+                ['extend' => 'excel', 'className' => 'btn btn-success text-white btn-sm mx-1', 'text' => '<i class="fa fa-file mr-2"></i> ' . trans('admin.export_excel')],
+                ['extend' => 'reload', 'className' => 'btn btn-outline-secondary btn-sm', 'text' => '<i class="fa fa-sync"></i>'],
                 [
                     'text' => '<i class="fa fa-trash mr-1"></i> ' . trans('admin.delete_all'),
-                    'className' => 'btn btn-danger text-white delete_all',
+                    'className' => 'btn btn-danger text-white btn-sm delete_all mx-1',
                 ],
             ],
             'initComplete' => "function () {

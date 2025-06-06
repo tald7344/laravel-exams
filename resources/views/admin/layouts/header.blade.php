@@ -31,11 +31,12 @@
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{asset('/design/adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="{{asset('/design/adminlte/plugins/daterangepicker/daterangepicker.css')}}">
+{{--  <link rel="stylesheet" href="{{asset('/design/adminlte/plugins/daterangepicker/daterangepicker.css')}}">--}}
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('/design/adminlte/plugins/summernote/summernote-bs4.css')}}">
   <link rel="stylesheet" href="{{asset('/design/adminlte/jstree/themes/default/style.css')}}">
   <link rel="stylesheet" href="  https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css"/>
   <link rel="stylesheet" href="{{asset('/design/adminlte/style.css')}}">
 
 

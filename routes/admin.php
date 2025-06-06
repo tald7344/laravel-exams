@@ -24,10 +24,25 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 
     // Check for middleware admin and deffined the guard as :admin | group Route If User Not Logged In
     Route::group(['middleware' => 'admin:admins'], function () {
-        Route::get('/', function() {
-            return view('admin.home');
-        });
+        Route::get('/', 'DashboardController@index');
         Route::any('logout', 'AdminAuth@logout');
+
+        // Calendar
+        Route::get('calendar-event', 'CalendarController@index');
+        Route::post('calendar-crud-ajax', 'CalendarController@calendarEvents');
+        Route::post('calendar-delete-ajax', 'CalendarController@clearCalendarEvents');
+
+        Route::group(['prefix' => 'to-do'], function () {
+            Route::get('/', 'ToDoController@index');
+            Route::get('/show', 'ToDoController@show');
+            Route::post('/paginate', 'ToDoController@paginateList');
+            Route::post('/add-edit', 'ToDoController@addOrEditItem');
+            Route::patch('/add-edit', 'ToDoController@addOrEditItem');
+            Route::post('/render-details', 'ToDoController@renderItemDetails');
+            Route::patch('/checked', 'ToDoController@checkToDoItem');
+            Route::delete('/delete', 'ToDoController@deleteToDoItem');
+            Route::delete('/show', 'ToDoController@deleteToDoItem');
+        });
 
         // Admin
         Route::resource('admin', 'AdminController');

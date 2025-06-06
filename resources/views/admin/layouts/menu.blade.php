@@ -8,10 +8,9 @@
         <a href="{{url('/')}}" class="nav-link">{{trans('admin.website')}}</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-      <a href="{{ aurl('logout') }}" class="nav-link">{{trans('admin.logout')}}</a>
+        <a href="{{ aurl('logout') }}" class="nav-link">{{trans('admin.logout')}}</a>
       </li>
     </ul>
-
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto mr-0">
@@ -28,11 +27,12 @@
             <a href="{{ aurl('lang/en') }}" class="dropdown-item">
               <span class="dropdown-item dropdown-header">English</span>
             </a>
+          </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-            <i class="fas fa-th-large"></i>
-          </a>
-        </li>
+{{--        <li class="nav-item">--}}
+{{--          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">--}}
+{{--            <i class="fas fa-th-large"></i>--}}
+{{--          </a>--}}
+{{--        </li>--}}
     </ul>
   </nav>

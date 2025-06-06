@@ -33,7 +33,7 @@
 
 @push('js')
   <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
-  <script src="/vendor/datatables/buttons.server-side.js"></script>
+  <script src="{{ asset('/vendor/datatables/buttons.server-side.js') }}"></script>
   {!! $dataTable->scripts() !!}
   <script>delete_All();</script>
 @endpush

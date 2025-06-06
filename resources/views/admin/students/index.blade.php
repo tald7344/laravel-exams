@@ -9,7 +9,7 @@
     <div class="card-body">
       {!! Form::open(['id' => 'form_data', 'url' => aurl('student/destroy/all'), 'method' => 'POST']) !!}
         {{ Form::hidden('_method', 'DELETE')}}
-        {!! $dataTable->table(['class' => 'dataTable table table-bordered table-striped dtr-inline'], true); !!}
+        {!! $dataTable->table(['class' => 'dataTable table table-responsive w-100 table-bordered table-striped dtr-inline'], true); !!}
       {!! Form::close() !!}
     </div>
     <!-- /.card-body -->
@@ -33,7 +33,7 @@
 
 @push('js')
   <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
-  <script src="/vendor/datatables/buttons.server-side.js"></script>
+  <script src="{{ asset('/vendor/datatables/buttons.server-side.js') }}"></script>
   {!! $dataTable->scripts() !!}
   <script>delete_All();</script>
 @endpush

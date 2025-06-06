@@ -23,7 +23,7 @@ class UserAuth extends Controller
             'password' => 'required'
         ]);
         $remember_me = request('rememberme') == 1 ? true : false;
-        if (users()->attempt(['username' => request('username'), 'password' => request('password')], $remember_me)) {
+        if (users()->attempt(['username' => $userValidate['username'], 'password' => $userValidate['password']], $remember_me)) {
             return redirect(url('/'));
         } else {
             return redirect(route('user.login'))->with('error', trans('admin.incorrect_information_login'));

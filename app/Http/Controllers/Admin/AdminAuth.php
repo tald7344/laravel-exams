@@ -21,8 +21,12 @@ class AdminAuth extends Controller
 
     public function doLogin()
     {
+        $adminValidate = $this->validate(request(), [
+            'email' => 'required',
+            'password' => 'required'
+        ]);
         $remember_me = request('rememberme') == 1 ? true : false;
-        if (admins()->attempt(['email' => request('email'), 'password' => request('password')], $remember_me)) {
+        if (admins()->attempt(['email' => $adminValidate['email'], 'password' => $adminValidate['password']], $remember_me)) {
             return redirect(aurl());
         } else {
             return redirect(aurl('login'))->with('error', trans('admin.incorrect_information_login'));

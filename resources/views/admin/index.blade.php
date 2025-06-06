@@ -8,14 +8,16 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Dashboard</h1>
+            <h1 class="m-0 text-dark">{{ trans('admin.dashboard') }}</h1>
           </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
-            </ol>
-          </div><!-- /.col -->
+            @if (!empty(getBreadcrumbWord()))
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="{{ aurl() }}">{{ trans('admin.main') }}</a></li>
+                    {!! getBreadcrumbWord() !!}
+                </ol>
+              </div><!-- /.col -->
+            @endif
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
@@ -29,6 +31,6 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  
+
 
 @include('admin.layouts.footer')
